@@ -193,15 +193,15 @@ function Dashboard() {
       </div>
 
       <div className="grid gap-6 lg:grid-cols-2">
-        <Card>
-          <div className="mb-5 flex items-center justify-between">
-            <h3 className="text-lg font-bold dark:text-white">Active Roadmap</h3>
+        <Card className="p-4 sm:p-6">
+          <div className="mb-4 flex items-center justify-between sm:mb-5">
+            <h3 className="text-base font-bold dark:text-white sm:text-lg">Active Roadmap</h3>
             {activeRoadmap && <Badge>{activeProgress}%</Badge>}
           </div>
           {activeRoadmap ? (
             <div className="space-y-4">
               <div className="rounded-xl border border-slate-200 p-4 dark:border-slate-800">
-                <div className="flex items-start justify-between gap-4">
+                <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
                   <div className="min-w-0">
                     <Link
                       to={`/roadmaps/${activeRoadmap.id}`}
@@ -209,7 +209,7 @@ function Dashboard() {
                     >
                       {activeRoadmap.title}
                     </Link>
-                    <div className="mt-3 grid grid-cols-2 gap-4 text-sm">
+                    <div className="mt-3 flex gap-4 text-sm">
                       <div>
                         <span className="text-slate-500 dark:text-slate-400">Completed</span>
                         <p className="font-semibold dark:text-white">{completedTaskCount}</p>
@@ -220,9 +220,9 @@ function Dashboard() {
                       </div>
                     </div>
                   </div>
-                  <div className="shrink-0 text-right text-sm">
-                    <span className="text-slate-500 dark:text-slate-400">Days left</span>
-                    <p className="text-2xl font-bold text-amber-600">{daysRemaining(activeRoadmap.targetCompletionDate)}</p>
+                  <div className="flex items-center gap-3 sm:block sm:text-right">
+                    <span className="text-xs text-slate-500 dark:text-slate-400 sm:text-sm">Days left</span>
+                    <p className="text-xl font-bold text-amber-600 sm:text-2xl">{daysRemaining(activeRoadmap.targetCompletionDate)}</p>
                   </div>
                 </div>
                 <div className="mt-4">
@@ -245,18 +245,18 @@ function Dashboard() {
           )}
         </Card>
 
-        <Card>
-          <h3 className="mb-5 text-lg font-bold dark:text-white">Continue Learning</h3>
+        <Card className="p-4 sm:p-6">
+          <h3 className="mb-4 text-base font-bold dark:text-white sm:mb-5 sm:text-lg">Continue Learning</h3>
           {incompleteTasks.length > 0 ? (
             <div className="space-y-2">
               {incompleteTasks.map((task) => (
                 <Link
                   key={task.id}
                   to={`/roadmaps/${activeRoadmap.id}`}
-                  className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white p-3 transition hover:border-indigo-200 hover:bg-indigo-50 dark:border-slate-800 dark:bg-slate-900 dark:hover:border-indigo-900 dark:hover:bg-indigo-950/40"
+                  className="flex items-center gap-2 rounded-xl border border-slate-200 bg-white p-2.5 transition hover:border-indigo-200 hover:bg-indigo-50 dark:border-slate-800 dark:bg-slate-900 dark:hover:border-indigo-900 dark:hover:bg-indigo-950/40 sm:gap-3 sm:p-3"
                 >
                   <span
-                    className={`h-2.5 w-2.5 shrink-0 rounded-full ${
+                    className={`h-2 w-2 shrink-0 rounded-full sm:h-2.5 sm:w-2.5 ${
                       task.status === 'in_progress' ? 'bg-amber-500' : 'bg-slate-400'
                     }`}
                   />
@@ -264,7 +264,7 @@ function Dashboard() {
                     <p className="truncate text-sm font-medium dark:text-slate-100">{task.title}</p>
                     <p className="text-xs text-slate-500 dark:text-slate-400">{task.phase}</p>
                   </div>
-                  <ArrowRight className="ml-auto h-4 w-4 shrink-0 text-slate-400" />
+                  <ArrowRight className="ml-auto h-3.5 w-3.5 shrink-0 text-slate-400 sm:h-4 sm:w-4" />
                 </Link>
               ))}
               {incompleteTaskCount > 5 && (
@@ -283,10 +283,10 @@ function Dashboard() {
       </div>
 
       <div className="grid gap-6 lg:grid-cols-3">
-        <Card className="lg:col-span-2">
-          <h3 className="mb-5 text-lg font-bold dark:text-white">Recent Roadmaps</h3>
+        <Card className="p-4 sm:p-6 lg:col-span-2">
+          <h3 className="mb-4 text-base font-bold dark:text-white sm:mb-5 sm:text-lg">Recent Roadmaps</h3>
           {recentRoadmaps.length > 0 ? (
-            <div className="space-y-3">
+            <div className="space-y-2 sm:space-y-3">
               {recentRoadmaps.map((r) => {
                 const total = r.tasks?.length || 0;
                 const done = r.tasks?.filter((t) => t.status === 'completed').length || 0;
@@ -295,19 +295,19 @@ function Dashboard() {
                     <Link
                       key={r.id}
                       to={`/roadmaps/${r.id}`}
-                      className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white p-3 transition hover:border-indigo-200 hover:shadow-sm dark:border-slate-800 dark:bg-slate-900 dark:hover:border-indigo-900 sm:gap-4 sm:p-4"
+                      className="flex items-center gap-2 rounded-xl border border-slate-200 bg-white p-2.5 transition hover:border-indigo-200 hover:shadow-sm dark:border-slate-800 dark:bg-slate-900 dark:hover:border-indigo-900 sm:gap-4 sm:p-4"
                     >
                       <div className="min-w-0 flex-1">
-                        <p className="truncate font-semibold dark:text-white">{r.title}</p>
-                        <div className="mt-1 flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400 sm:mt-2 sm:gap-3">
+                        <p className="truncate text-sm font-semibold dark:text-white sm:text-base">{r.title}</p>
+                        <div className="mt-0.5 flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400 sm:mt-2 sm:gap-3 sm:text-sm">
                           <span>{r.skillLevel}</span>
                           <span>&middot;</span>
                           <span>{done}/{total} tasks</span>
                         </div>
                       </div>
-                      <div className="w-20 shrink-0 text-right sm:w-28">
-                        <p className="text-sm font-semibold text-emerald-600">{pct}%</p>
-                        <div className="mt-1.5">
+                      <div className="w-16 shrink-0 text-right sm:w-28">
+                        <p className="text-xs font-semibold text-emerald-600 sm:text-sm">{pct}%</p>
+                        <div className="mt-1">
                           <ProgressBar value={pct} />
                         </div>
                       </div>
@@ -325,19 +325,19 @@ function Dashboard() {
           )}
         </Card>
 
-        <Card>
-          <h3 className="mb-5 text-lg font-bold dark:text-white">Quick Actions</h3>
-          <div className="grid grid-cols-2 gap-3">
+        <Card className="p-4 sm:p-6">
+          <h3 className="mb-4 text-base font-bold dark:text-white sm:mb-5 sm:text-lg">Quick Actions</h3>
+          <div className="grid grid-cols-2 gap-2 sm:gap-3">
             {QUICK_ACTIONS.map((action) => (
               <Link
                 key={action.label}
                 to={action.path}
-                className="flex flex-col items-center gap-2 rounded-xl border border-slate-200 bg-white p-4 text-center transition hover:border-indigo-200 hover:shadow-sm dark:border-slate-800 dark:bg-slate-900 dark:hover:border-indigo-900"
+                className="flex flex-col items-center gap-1.5 rounded-xl border border-slate-200 bg-white p-3 text-center transition hover:border-indigo-200 hover:shadow-sm dark:border-slate-800 dark:bg-slate-900 dark:hover:border-indigo-900 sm:gap-2 sm:p-4"
               >
-                <div className={`flex h-10 w-10 items-center justify-center rounded-xl ${action.bg}`}>
-                  <action.icon className="h-5 w-5" />
+                <div className={`flex h-8 w-8 items-center justify-center rounded-xl sm:h-10 sm:w-10 ${action.bg}`}>
+                  <action.icon className="h-4 w-4 sm:h-5 sm:w-5" />
                 </div>
-                <span className="text-sm font-semibold dark:text-white">{action.label}</span>
+                <span className="text-xs font-semibold dark:text-white sm:text-sm">{action.label}</span>
               </Link>
             ))}
           </div>
