@@ -1,0 +1,15 @@
+<svg width="980" height="240" viewBox="0 0 980 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="16" y="16" width="208" height="208" rx="52" fill="#4F46E5"/>
+  <path d="M72 156C72 132 91.5 124 120 116C148.5 108 168 100 168 76" stroke="white" stroke-width="18" stroke-linecap="round"/>
+  <circle cx="72" cy="156" r="16" fill="#10B981" stroke="white" stroke-width="8"/>
+  <circle cx="120" cy="116" r="12" fill="white"/>
+  <path d="M168 76L168 116" stroke="white" stroke-width="18" stroke-linecap="round"/>
+  <path d="M168 76L134 94" stroke="white" stroke-width="18" stroke-linecap="round"/>
+  <text x="268" y="145" fill="#0F172A" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="92" font-weight="800" letter-spacing="-4">
+    SkillPath
+  </text>
+  <text x="272" y="185" fill="#64748B" font-family="Inter, ui-sans-serif, system-ui, sans-serif" font-size="26" font-weight="600">
+    Guided learning roadmaps
+  </text>
+</svg>
+

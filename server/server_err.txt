@@ -1,0 +1,39 @@
+Groq failed: {
+  status: 413,
+  body: '{"error":{"message":"Request too large for model `llama-3.1-8b-instant` in organization `org_01jt83r32weyvrpjhvse603bpa` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Requested 8784, please reduce your message size and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing","type":"tokens","code":"rate_limit_exceeded"}}\n'
+}
+AI generation failed
+Groq failed: {
+  status: 413,
+  body: '{"error":{"message":"Request too large for model `llama-3.1-8b-instant` in organization `org_01jt83r32weyvrpjhvse603bpa` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Requested 8789, please reduce your message size and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing","type":"tokens","code":"rate_limit_exceeded"}}\n'
+}
+AI generation failed
+Groq failed: {
+  status: 413,
+  body: '{"error":{"message":"Request too large for model `llama-3.1-8b-instant` in organization `org_01jt83r32weyvrpjhvse603bpa` service tier `on_demand` on tokens per minute (TPM): Limit 6000, Requested 8784, please reduce your message size and try again. Need more tokens? Upgrade to Dev Tier today at https://console.groq.com/settings/billing","type":"tokens","code":"rate_limit_exceeded"}}\n'
+}
+AI generation failed
+PrismaClientKnownRequestError: 
+Invalid `prisma.user.findUnique()` invocation:
+
+
+Can't reach database server at `ep-sweet-mountain-ad2nyo91-pooler.c-2.us-east-1.aws.neon.tech:5432`
+
+Please make sure your database server is running at `ep-sweet-mountain-ad2nyo91-pooler.c-2.us-east-1.aws.neon.tech:5432`.
+    at ei.handleRequestError (D:\SkillPath\server\node_modules\@prisma\client\runtime\library.js:121:7268)
+    at ei.handleAndLogRequestError (D:\SkillPath\server\node_modules\@prisma\client\runtime\library.js:121:6593)
+    at ei.request (D:\SkillPath\server\node_modules\@prisma\client\runtime\library.js:121:6300)
+    at async a (D:\SkillPath\server\node_modules\@prisma\client\runtime\library.js:130:9551)
+    at async loginUser (file:///D:/SkillPath/server/src/controllers/authController.js:56:16)
+PrismaClientKnownRequestError: 
+Invalid `prisma.user.findUnique()` invocation:
+
+
+Can't reach database server at `ep-sweet-mountain-ad2nyo91-pooler.c-2.us-east-1.aws.neon.tech:5432`
+
+Please make sure your database server is running at `ep-sweet-mountain-ad2nyo91-pooler.c-2.us-east-1.aws.neon.tech:5432`.
+    at ei.handleRequestError (D:\SkillPath\server\node_modules\@prisma\client\runtime\library.js:121:7268)
+    at ei.handleAndLogRequestError (D:\SkillPath\server\node_modules\@prisma\client\runtime\library.js:121:6593)
+    at ei.request (D:\SkillPath\server\node_modules\@prisma\client\runtime\library.js:121:6300)
+    at async a (D:\SkillPath\server\node_modules\@prisma\client\runtime\library.js:130:9551)
+    at async loginUser (file:///D:/SkillPath/server/src/controllers/authController.js:56:16)

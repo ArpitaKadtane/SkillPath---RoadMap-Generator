@@ -1,0 +1,250 @@
+Create roadmap error: PrismaClientValidationError: 
+Invalid `prisma.roadmap.create()` invocation:
+
+{
+  data: {
+    userId: "cmqj35pp20000v6yopyw12xt5",
+    title: "Backend Developer Roadmap",
+    goal: "Backend Developer",
+    skillLevel: "Intermediate",
+    studyHoursPerDay: 3,
+    targetCompletionDate: new Date("2026-06-26T00:00:00.000Z"),
+    summary: "6-day learning plan to enhance backend development skills",
+    ~~~~~~~
+    estimatedDuration: "6 days",
+    phasesData: [
+      {
+        phase: "Week 1",
+        focus: "Backend Fundamentals and Database Modeling",
+        days: [
+          {
+            day: 1,
+            title: "Understand RESTful API Design Principles",
+            description: "Study the fundamentals of RESTful API design, including resource naming, HTTP methods, and request/response formats",
+            estimatedHours: 3
+          },
+          {
+            day: 2,
+            title: "Design a PostgreSQL Schema for a Simple Blog",
+            description: "Create a database schema for a simple blog application, including tables for users, posts, and comments",
+            estimatedHours: 3
+          },
+          {
+            day: 3,
+            title: "Implement CRUD Operations using Node.js and PostgreSQL",
+            description: "Write Node.js code to perform create, read, update, and delete operations on the blog database schema",
+            estimatedHours: 3
+          },
+          {
+            day: 4,
+            title: "Learn about Database Indexing and Query Optimization",
+            description: "Study how to optimize database queries using indexing, caching, and other techniques",
+            estimatedHours: 3
+          },
+          {
+            day: 5,
+            title: "Understand the Importance of Error Handling and Logging",
+            description: "Learn how to handle errors and exceptions in Node.js, and implement logging mechanisms for debugging and monitoring",
+            estimatedHours: 3
+          },
+          {
+            day: 6,
+            title: "Revision and Practice Day",
+            description: "Review and practice the concepts learned during the week, including RESTful API design, database modeling, and CRUD operations",
+            estimatedHours: 3
+          }
+        ],
+        project: {
+          title: "Simple Blog API",
+          description: "Build a simple RESTful API for a blog application, using Node.js, PostgreSQL, and CRUD operations"
+        },
+        resources: [
+          "https://nodejs.org/en/docs/guides/getting-started-guide/",
+          "https://www.postgresql.org/docs/13/index.html",
+          "https://www.udemy.com/course/nodejs-postgresql/"
+        ]
+      }
+    ],
+    status: "active",
+?   id?: String,
+?   createdAt?: DateTime,
+?   tasks?: RoadmapTaskUncheckedCreateNestedManyWithoutRoadmapInput
+  }
+}
+
+Unknown argument `summary`. Available options are marked with ?.
+    at Nn (D:\SkillPath\server\node_modules\@prisma\client\runtime\library.js:29:1363)
+    at ei.handleRequestError (D:\SkillPath\server\node_modules\@prisma\client\runtime\library.js:121:6911)
+    at ei.handleAndLogRequestError (D:\SkillPath\server\node_modules\@prisma\client\runtime\library.js:121:6593)
+    at ei.request (D:\SkillPath\server\node_modules\@prisma\client\runtime\library.js:121:6300)
+    at async a (D:\SkillPath\server\node_modules\@prisma\client\runtime\library.js:130:9551)
+    at async createRoadmap (file:///D:/SkillPath/server/src/controllers/roadmapController.js:34:25) {
+  clientVersion: '6.19.3'
+}
+Create roadmap error: PrismaClientValidationError: 
+Invalid `prisma.roadmap.create()` invocation:
+
+{
+  data: {
+    userId: "cmqj35pp20000v6yopyw12xt5",
+    title: "Backend Developer Roadmap",
+    goal: "Backend Developer",
+    skillLevel: "Intermediate",
+    studyHoursPerDay: 3,
+    targetCompletionDate: new Date("2026-06-26T00:00:00.000Z"),
+    summary: "6-day learning plan for intermediate backend developers",
+    ~~~~~~~
+    estimatedDuration: "6 days",
+    phasesData: [
+      {
+        phase: "Week 1",
+        focus: "Backend Fundamentals",
+        days: [
+          {
+            day: 1,
+            title: "Understand Node.js Event Loop and Asynchronous Execution Model",
+            description: "Study the Node.js event loop, asynchronous execution model, and how to handle callbacks, promises, and async/await",
+            estimatedHours: 3
+          },
+          {
+            day: 2,
+            title: "Build a Simple RESTful API using Express.js",
+            description: "Create a basic RESTful API using Express.js, including routing, middleware, and error handling",
+            estimatedHours: 3
+          },
+          {
+            day: 3,
+            title: "Implement Request and Response Handling using Express.js",
+            description: "Learn how to handle requests and responses using Express.js, including parsing request bodies and sending responses",
+            estimatedHours: 3
+          },
+          {
+            day: 4,
+            title: "Understand Middleware and its Role in Express.js",
+            description: "Study the concept of middleware in Express.js, including how to create and use custom middleware",
+            estimatedHours: 3
+          },
+          {
+            day: 5,
+            title: "Learn about Error Handling and Logging in Express.js",
+            description: "Understand how to handle errors and log events in Express.js, including using error-handling middleware and logging libraries",
+            estimatedHours: 3
+          },
+          {
+            day: 6,
+            title: "Revision Day: Review and Practice Backend Fundamentals",
+            description: "Review and practice the concepts learned throughout the week, including Node.js event loop, Express.js, and middleware",
+            estimatedHours: 3
+          }
+        ],
+        project: {
+          title: "Simple Todo List API",
+          description: "Build a simple todo list API using Express.js, including CRUD operations and basic authentication"
+        },
+        resources: [
+          "https://nodejs.org/en/docs/guides/event-loop/",
+          "https://expressjs.com/en/guide/routing.html",
+          "https://www.freecodecamp.org/learn/back-end-development-with-nodejs/"
+        ]
+      }
+    ],
+    status: "active",
+?   id?: String,
+?   createdAt?: DateTime,
+?   tasks?: RoadmapTaskUncheckedCreateNestedManyWithoutRoadmapInput
+  }
+}
+
+Unknown argument `summary`. Available options are marked with ?.
+    at Nn (D:\SkillPath\server\node_modules\@prisma\client\runtime\library.js:29:1363)
+    at ei.handleRequestError (D:\SkillPath\server\node_modules\@prisma\client\runtime\library.js:121:6911)
+    at ei.handleAndLogRequestError (D:\SkillPath\server\node_modules\@prisma\client\runtime\library.js:121:6593)
+    at ei.request (D:\SkillPath\server\node_modules\@prisma\client\runtime\library.js:121:6300)
+    at async a (D:\SkillPath\server\node_modules\@prisma\client\runtime\library.js:130:9551)
+    at async createRoadmap (file:///D:/SkillPath/server/src/controllers/roadmapController.js:34:25) {
+  clientVersion: '6.19.3'
+}
+Create roadmap error: PrismaClientValidationError: 
+Invalid `prisma.roadmap.create()` invocation:
+
+{
+  data: {
+    userId: "cmqj35pp20000v6yopyw12xt5",
+    title: "Backend Developer Roadmap",
+    goal: "Backend Developer",
+    skillLevel: "Intermediate",
+    studyHoursPerDay: 3,
+    targetCompletionDate: new Date("2026-06-26T00:00:00.000Z"),
+    summary: "6-day learning plan to enhance backend development skills",
+    ~~~~~~~
+    estimatedDuration: "6 days",
+    phasesData: [
+      {
+        phase: "Week 1",
+        focus: "Backend Fundamentals",
+        days: [
+          {
+            day: 1,
+            title: "Understand Node.js Event Loop and Asynchronous Execution Model",
+            description: "Study the Node.js event loop, asynchronous execution model, and how to handle callbacks and promises",
+            estimatedHours: 3
+          },
+          {
+            day: 2,
+            title: "Build a Simple RESTful API using Express.js",
+            description: "Create a basic RESTful API using Express.js to handle CRUD operations",
+            estimatedHours: 3
+          },
+          {
+            day: 3,
+            title: "Implement Error Handling and Logging Mechanisms",
+            description: "Learn to handle errors and implement logging mechanisms using Winston and Morgan",
+            estimatedHours: 3
+          },
+          {
+            day: 4,
+            title: "Understand Middleware and Request/Response Objects",
+            description: "Study the concept of middleware and how to work with request and response objects in Express.js",
+            estimatedHours: 3
+          },
+          {
+            day: 5,
+            title: "Learn to Use Environment Variables and Configuration Files",
+            description: "Understand how to use environment variables and configuration files to manage application settings",
+            estimatedHours: 3
+          },
+          {
+            day: 6,
+            title: "Revision Day: Review and Practice Backend Fundamentals",
+            description: "Review and practice the concepts learned during the week, focusing on backend fundamentals",
+            estimatedHours: 3
+          }
+        ],
+        project: {
+          title: "Simple Blog API",
+          description: "Build a simple blog API using Express.js to practice backend fundamentals"
+        },
+        resources: [
+          "https://nodejs.org/en/docs/guides/event-loop/",
+          "https://expressjs.com/en/guide/routing.html",
+          "https://www.npmjs.com/package/winston",
+          "https://www.npmjs.com/package/morgan"
+        ]
+      }
+    ],
+    status: "active",
+?   id?: String,
+?   createdAt?: DateTime,
+?   tasks?: RoadmapTaskUncheckedCreateNestedManyWithoutRoadmapInput
+  }
+}
+
+Unknown argument `summary`. Available options are marked with ?.
+    at Nn (D:\SkillPath\server\node_modules\@prisma\client\runtime\library.js:29:1363)
+    at ei.handleRequestError (D:\SkillPath\server\node_modules\@prisma\client\runtime\library.js:121:6911)
+    at ei.handleAndLogRequestError (D:\SkillPath\server\node_modules\@prisma\client\runtime\library.js:121:6593)
+    at ei.request (D:\SkillPath\server\node_modules\@prisma\client\runtime\library.js:121:6300)
+    at async a (D:\SkillPath\server\node_modules\@prisma\client\runtime\library.js:130:9551)
+    at async createRoadmap (file:///D:/SkillPath/server/src/controllers/roadmapController.js:34:25) {
+  clientVersion: '6.19.3'
+}
