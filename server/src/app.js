@@ -17,12 +17,19 @@ const allowedOrigins = [
   process.env.CLIENT_URL,
   'http://localhost:5173',
   'http://localhost:5174',
+  'https://skillpath.onrender.com',
+  /\.onrender\.com$/,
 ].filter(Boolean);
 
 app.use(
   cors({
     origin(origin, callback) {
-      if (!origin || allowedOrigins.includes(origin)) {
+      if (
+        !origin ||
+        allowedOrigins.some((o) =>
+          o instanceof RegExp ? o.test(origin) : o === origin
+        )
+      ) {
         callback(null, true);
         return;
       }
