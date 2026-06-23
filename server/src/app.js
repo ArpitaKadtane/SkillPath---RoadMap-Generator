@@ -40,6 +40,14 @@ app.use(
 );
 app.use(express.json());
 
+app.get('/', (req, res) => {
+  res.json({
+    status: 'ok',
+    message: 'SkillPath API is running',
+    docs: '/api/health',
+  });
+});
+
 app.use('/api/auth', authRoutes);
 app.use('/api/health', healthRoutes);
 app.use('/api/profile', profileRoutes);
