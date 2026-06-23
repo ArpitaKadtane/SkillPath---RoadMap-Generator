@@ -13,6 +13,13 @@ import SuccessMessage from '../components/SuccessMessage.jsx';
 import useAuth from '../hooks/useAuth.js';
 import api from '../services/api.js';
 
+const SKILL_LEVELS = [
+  { label: 'Beginner', value: 'Beginner' },
+  { label: 'Intermediate', value: 'Intermediate' },
+  { label: 'Advanced', value: 'Advanced' },
+  { label: 'Expert', value: 'Expert' },
+];
+
 const EXPERIENCE_LEVELS = [
   { label: 'Student', value: 'Student' },
   { label: 'Fresher', value: 'Fresher' },
@@ -269,6 +276,20 @@ function ProfileSetup() {
                   error={errors.fullName}
                 />
                 <FormField
+                  label="Skill Level"
+                  name="skillLevel"
+                  type="select"
+                  value={profile.skillLevel}
+                  onChange={handleChange}
+                  error={errors.skillLevel}
+                  options={[
+                    { label: 'Select your skill level', value: '' },
+                    ...SKILL_LEVELS.map((s) => ({ label: s.label, value: s.value })),
+                  ]}
+                />
+              </div>
+              <div className="mt-5 grid gap-5 md:grid-cols-2">
+                <FormField
                   label="Experience Level"
                   name="experienceLevel"
                   type="select"
@@ -279,8 +300,6 @@ function ProfileSetup() {
                     ...EXPERIENCE_LEVELS.map((e) => ({ label: e.label, value: e.value })),
                   ]}
                 />
-              </div>
-              <div className="mt-5">
                 <FormField
                   label="Current Occupation"
                   name="occupation"
