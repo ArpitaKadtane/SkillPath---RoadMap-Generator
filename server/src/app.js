@@ -18,7 +18,8 @@ const allowedOrigins = [
   'http://localhost:5173',
   'http://localhost:5174',
   'https://skillpath.onrender.com',
-  /\.onrender\.com$/,
+  'https://skillpathroadmapgenerator.vercel.app',
+  /\.(onrender|vercel)\.com$/,
 ].filter(Boolean);
 
 app.use(
