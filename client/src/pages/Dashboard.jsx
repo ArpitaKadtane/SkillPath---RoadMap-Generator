@@ -282,8 +282,8 @@ function Dashboard() {
         </Card>
       </div>
 
-      <div className="grid gap-6 lg:grid-cols-3">
-        <Card className="p-4 sm:p-6 lg:col-span-2">
+      <div className="grid gap-6">
+        <Card className="p-4 sm:p-6">
           <h3 className="mb-4 text-base font-bold dark:text-white sm:mb-5 sm:text-lg">Recent Roadmaps</h3>
           {recentRoadmaps.length > 0 ? (
             <div className="space-y-2 sm:space-y-3">
@@ -295,7 +295,7 @@ function Dashboard() {
                     <Link
                       key={r.id}
                       to={`/roadmaps/${r.id}`}
-                      className="flex items-center gap-2 rounded-xl border border-slate-200 bg-white p-2.5 transition hover:border-indigo-200 hover:shadow-sm dark:border-slate-800 dark:bg-slate-900 dark:hover:border-indigo-900 sm:gap-4 sm:p-4"
+                      className="flex flex-col gap-2 rounded-xl border border-slate-200 bg-white p-3 transition hover:border-indigo-200 hover:shadow-sm dark:border-slate-800 dark:bg-slate-900 dark:hover:border-indigo-900 sm:flex-row sm:items-center sm:gap-4 sm:p-4"
                     >
                       <div className="min-w-0 flex-1">
                         <p className="truncate text-sm font-semibold dark:text-white sm:text-base">{r.title}</p>
@@ -305,9 +305,9 @@ function Dashboard() {
                           <span>{done}/{total} tasks</span>
                         </div>
                       </div>
-                      <div className="w-16 shrink-0 text-right sm:w-28">
+                      <div className="flex items-center gap-2 sm:w-28 sm:flex-col sm:gap-1 sm:text-right">
                         <p className="text-xs font-semibold text-emerald-600 sm:text-sm">{pct}%</p>
-                        <div className="mt-1">
+                        <div className="flex-1 sm:w-full">
                           <ProgressBar value={pct} />
                         </div>
                       </div>
@@ -327,17 +327,17 @@ function Dashboard() {
 
         <Card className="p-4 sm:p-6">
           <h3 className="mb-4 text-base font-bold dark:text-white sm:mb-5 sm:text-lg">Quick Actions</h3>
-          <div className="grid grid-cols-2 gap-2 sm:gap-3">
+          <div className="grid grid-cols-2 gap-3 sm:gap-4">
             {QUICK_ACTIONS.map((action) => (
               <Link
                 key={action.label}
                 to={action.path}
-                className="flex flex-col items-center gap-1.5 rounded-xl border border-slate-200 bg-white p-3 text-center transition hover:border-indigo-200 hover:shadow-sm dark:border-slate-800 dark:bg-slate-900 dark:hover:border-indigo-900 sm:gap-2 sm:p-4"
+                className="flex flex-col items-center gap-2 rounded-xl border border-slate-200 bg-white p-4 text-center transition hover:border-indigo-200 hover:shadow-sm dark:border-slate-800 dark:bg-slate-900 dark:hover:border-indigo-900"
               >
-                <div className={`flex h-8 w-8 items-center justify-center rounded-xl sm:h-10 sm:w-10 ${action.bg}`}>
-                  <action.icon className="h-4 w-4 sm:h-5 sm:w-5" />
+                <div className={`flex h-10 w-10 items-center justify-center rounded-xl ${action.bg}`}>
+                  <action.icon className="h-5 w-5" />
                 </div>
-                <span className="text-xs font-semibold dark:text-white sm:text-sm">{action.label}</span>
+                <span className="text-sm font-semibold dark:text-white">{action.label}</span>
               </Link>
             ))}
           </div>
