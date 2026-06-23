@@ -292,7 +292,7 @@ Important:
             { role: 'user', content: prompt },
         ],
         temperature: 0.25,
-        max_tokens: 8192,
+        max_tokens: 4000,
     };
 
     console.log("Request payload:", JSON.stringify(requestPayload, null, 2));
