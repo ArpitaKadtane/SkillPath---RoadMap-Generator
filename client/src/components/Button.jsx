@@ -10,7 +10,7 @@ function Button({ children, className = '', isLoading = false, variant = 'primar
 
   return (
     <button
-      className={`inline-flex items-center justify-center rounded-xl px-4 py-2.5 text-sm font-semibold transition disabled:cursor-not-allowed disabled:opacity-60 ${variants[variant]} ${className}`}
+      className={`inline-flex items-center justify-center rounded-xl px-4 py-2.5 text-sm font-semibold transition active:scale-[0.97] disabled:cursor-not-allowed disabled:opacity-60 ${variants[variant]} ${className}`}
       disabled={isLoading || props.disabled}
       {...props}
     >

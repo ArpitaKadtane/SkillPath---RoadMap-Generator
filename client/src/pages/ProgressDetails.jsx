@@ -152,7 +152,7 @@ function ProgressDetails() {
                           ) : (
                             <List className="mt-0.5 h-5 w-5 shrink-0 text-slate-400" />
                           )}
-                          <div>
+                          <div className="min-w-0">
                             <p
                               className={`font-medium ${
                                 task.status === 'completed'
@@ -167,7 +167,7 @@ function ProgressDetails() {
                             )}
                           </div>
                         </div>
-                        <div className="flex shrink-0 gap-1">
+                        <div className="flex flex-wrap gap-1 sm:shrink-0">
                           {STATUS_OPTIONS.map((opt) => {
                             const isActive = task.status === opt.value;
                             return (
@@ -175,8 +175,7 @@ function ProgressDetails() {
                                 key={opt.value}
                                 type="button"
                                 disabled={isUpdating || isActive}
-                                onClick={() => handleStatusChange(task.id, opt.value)}
-                                className={`rounded-lg px-2.5 py-1 text-xs font-semibold transition disabled:cursor-not-allowed ${
+                                className={`flex-1 rounded-lg px-2.5 py-1.5 text-xs font-semibold transition disabled:cursor-not-allowed sm:flex-none sm:py-1 ${
                                   isActive
                                     ? opt.value === 'completed'
                                       ? 'bg-emerald-600 text-white'

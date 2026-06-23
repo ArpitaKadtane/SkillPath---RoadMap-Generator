@@ -103,15 +103,15 @@ function Progress() {
         </Card>
       </div>
 
-      <div className="flex gap-2">
+      <div className="scrollbar-none flex gap-2 overflow-x-auto pb-1">
         {FILTERS.map((f) => (
           <button
             key={f.value}
             type="button"
             onClick={() => setFilter(f.value)}
-            className={`rounded-full px-4 py-1.5 text-sm font-semibold transition ${
+            className={`whitespace-nowrap rounded-full px-4 py-1.5 text-sm font-semibold transition active:scale-95 ${
               filter === f.value
-                ? 'bg-indigo-600 text-white'
+                ? 'bg-indigo-600 text-white shadow-sm'
                 : 'bg-slate-100 text-slate-600 hover:bg-slate-200 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700'
             }`}
           >
@@ -129,6 +129,7 @@ function Progress() {
           title={filter === 'all' ? 'No roadmaps yet' : `No ${filter} roadmaps`}
           description={filter === 'all' ? 'Create a roadmap to start tracking your progress.' : `You don't have any ${filter} roadmaps.`}
           action={filter === 'all' ? 'Create roadmap' : undefined}
+          actionPath={filter === 'all' ? '/create-roadmap' : undefined}
         />
       ) : (
         <div className="grid gap-4 sm:grid-cols-2">

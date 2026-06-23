@@ -92,25 +92,35 @@ function Dashboard() {
 
   return (
     <div className="space-y-6">
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <h2 className="text-xl font-bold dark:text-white sm:text-2xl">Dashboard</h2>
+        <Link to="/create-roadmap">
+          <Button className="w-full sm:w-auto">
+            <Plus className="mr-1.5 h-4 w-4" />
+            Create New Roadmap
+          </Button>
+        </Link>
+      </div>
+
       <Card className="overflow-hidden bg-gradient-to-br from-indigo-600 to-indigo-800 text-white dark:from-indigo-500 dark:to-slate-900">
-        <div className="max-w-2xl space-y-4">
+        <div className="space-y-4">
           {profile ? (
             <>
               <Badge tone="green">Profile Complete</Badge>
-              <h2 className="text-3xl font-bold tracking-tight">
+              <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
                 Welcome back, {user.name}. Your {profile.careerGoal || 'learning'} path is taking shape.
               </h2>
-              <p className="max-w-xl text-indigo-100">
+              <p className="text-sm text-indigo-100 sm:text-base sm:max-w-xl">
                 Skill level: {profile.skillLevel}{profile.studyHoursPerWeek ? ` \u2022 ${profile.studyHoursPerWeek} hours/week` : ''}{profile.targetCompletionDate ? ` \u2022 Target: ${new Date(profile.targetCompletionDate).toLocaleDateString()}` : ''}
               </p>
               {activeRoadmap && (
                 <div className="mt-4 rounded-lg bg-indigo-700/20 p-3">
-                  <div className="flex items-center justify-between">
-                    <div>
+                  <div className="flex items-center justify-between gap-2">
+                    <div className="min-w-0">
                       <div className="text-sm text-indigo-100">Active roadmap</div>
-                      <div className="font-semibold text-white">{activeRoadmap.title}</div>
+                      <div className="truncate font-semibold text-white">{activeRoadmap.title}</div>
                     </div>
-                    <div className="text-white">{activeProgress}%</div>
+                    <div className="shrink-0 text-white">{activeProgress}%</div>
                   </div>
                   <div className="mt-3">
                     <ProgressBar value={activeProgress} />
@@ -121,10 +131,10 @@ function Dashboard() {
           ) : (
             <>
               <Badge tone="yellow">Setup Required</Badge>
-              <h2 className="text-3xl font-bold tracking-tight">
+              <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">
                 Welcome, {user.name}! Let&apos;s personalize your learning path.
               </h2>
-              <p className="max-w-xl text-indigo-100">
+              <p className="text-sm text-indigo-100 sm:text-base sm:max-w-xl">
                 Complete your profile setup so we can generate a roadmap tailored to your goals and schedule.
               </p>
               <Link to="/profile-setup">
@@ -135,48 +145,48 @@ function Dashboard() {
         </div>
       </Card>
 
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
         <Card>
           <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600 dark:bg-indigo-950 dark:text-indigo-400">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600 dark:bg-indigo-950 dark:text-indigo-400">
               <Layers className="h-5 w-5" />
             </div>
-            <div>
-              <p className="text-xs font-medium text-slate-500 dark:text-slate-400">Total Roadmaps</p>
-              <p className="text-xl font-bold dark:text-white">{totalRoadmaps}</p>
+            <div className="min-w-0">
+              <p className="text-xs font-medium text-slate-500 dark:text-slate-400">Total</p>
+              <p className="text-lg font-bold dark:text-white sm:text-xl">{totalRoadmaps}</p>
             </div>
           </div>
         </Card>
         <Card>
           <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600 dark:bg-emerald-950 dark:text-emerald-400">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600 dark:bg-emerald-950 dark:text-emerald-400">
               <CheckCircle2 className="h-5 w-5" />
             </div>
-            <div>
-              <p className="text-xs font-medium text-slate-500 dark:text-slate-400">Completed Tasks</p>
-              <p className="text-xl font-bold dark:text-white">{totalCompleted}</p>
+            <div className="min-w-0">
+              <p className="text-xs font-medium text-slate-500 dark:text-slate-400">Completed</p>
+              <p className="text-lg font-bold dark:text-white sm:text-xl">{totalCompleted}</p>
             </div>
           </div>
         </Card>
         <Card>
           <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-50 text-amber-600 dark:bg-amber-950 dark:text-amber-400">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-amber-50 text-amber-600 dark:bg-amber-950 dark:text-amber-400">
               <Clock className="h-5 w-5" />
             </div>
-            <div>
-              <p className="text-xs font-medium text-slate-500 dark:text-slate-400">Pending Tasks</p>
-              <p className="text-xl font-bold dark:text-white">{totalPending}</p>
+            <div className="min-w-0">
+              <p className="text-xs font-medium text-slate-500 dark:text-slate-400">Pending</p>
+              <p className="text-lg font-bold dark:text-white sm:text-xl">{totalPending}</p>
             </div>
           </div>
         </Card>
         <Card>
           <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-violet-50 text-violet-600 dark:bg-violet-950 dark:text-violet-400">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-violet-50 text-violet-600 dark:bg-violet-950 dark:text-violet-400">
               <TrendingUp className="h-5 w-5" />
             </div>
-            <div>
-              <p className="text-xs font-medium text-slate-500 dark:text-slate-400">Overall Progress</p>
-              <p className="text-xl font-bold dark:text-white">{overallProgress}%</p>
+            <div className="min-w-0">
+              <p className="text-xs font-medium text-slate-500 dark:text-slate-400">Progress</p>
+              <p className="text-lg font-bold dark:text-white sm:text-xl">{overallProgress}%</p>
             </div>
           </div>
         </Card>
@@ -228,8 +238,9 @@ function Dashboard() {
           ) : (
             <EmptyState
               title="No roadmaps yet"
-              description="Create your first roadmap to start tracking your learning progress."
+              description="Create your first roadmap to begin your learning journey."
               action="Create roadmap"
+              actionPath="/create-roadmap"
             />
           )}
         </Card>
@@ -281,34 +292,35 @@ function Dashboard() {
                 const done = r.tasks?.filter((t) => t.status === 'completed').length || 0;
                 const pct = total === 0 ? 0 : Math.round((done / total) * 100);
                 return (
-                  <Link
-                    key={r.id}
-                    to={`/roadmaps/${r.id}`}
-                    className="flex items-center gap-4 rounded-xl border border-slate-200 bg-white p-4 transition hover:border-indigo-200 hover:shadow-sm dark:border-slate-800 dark:bg-slate-900 dark:hover:border-indigo-900"
-                  >
-                    <div className="min-w-0 flex-1">
-                      <p className="truncate font-semibold dark:text-white">{r.title}</p>
-                      <div className="mt-2 flex items-center gap-3 text-sm text-slate-500 dark:text-slate-400">
-                        <span>{r.skillLevel}</span>
-                        <span>&middot;</span>
-                        <span>{done}/{total} tasks</span>
+                    <Link
+                      key={r.id}
+                      to={`/roadmaps/${r.id}`}
+                      className="flex items-center gap-3 rounded-xl border border-slate-200 bg-white p-3 transition hover:border-indigo-200 hover:shadow-sm dark:border-slate-800 dark:bg-slate-900 dark:hover:border-indigo-900 sm:gap-4 sm:p-4"
+                    >
+                      <div className="min-w-0 flex-1">
+                        <p className="truncate font-semibold dark:text-white">{r.title}</p>
+                        <div className="mt-1 flex items-center gap-2 text-sm text-slate-500 dark:text-slate-400 sm:mt-2 sm:gap-3">
+                          <span>{r.skillLevel}</span>
+                          <span>&middot;</span>
+                          <span>{done}/{total} tasks</span>
+                        </div>
                       </div>
-                    </div>
-                    <div className="w-28 text-right">
-                      <p className="text-sm font-semibold text-emerald-600">{pct}%</p>
-                      <div className="mt-1.5">
-                        <ProgressBar value={pct} />
+                      <div className="w-20 shrink-0 text-right sm:w-28">
+                        <p className="text-sm font-semibold text-emerald-600">{pct}%</p>
+                        <div className="mt-1.5">
+                          <ProgressBar value={pct} />
+                        </div>
                       </div>
-                    </div>
-                  </Link>
+                    </Link>
                 );
               })}
             </div>
           ) : (
             <EmptyState
               title="No roadmaps yet"
-              description="Create your first roadmap to begin your learning journey."
+              description="Create a roadmap to get started."
               action="Create roadmap"
+              actionPath="/create-roadmap"
             />
           )}
         </Card>

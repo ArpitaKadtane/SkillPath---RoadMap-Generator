@@ -42,13 +42,13 @@ function MyRoadmaps() {
           <p className="text-sm font-semibold uppercase tracking-wide text-indigo-600">My Roadmaps</p>
           <h2 className="mt-2 text-3xl font-bold tracking-tight dark:text-white">Your learning plans</h2>
         </div>
-        <div className="flex gap-3">
+        <div className="flex flex-col gap-3 sm:flex-row">
           <input
             type="search"
             placeholder="Search roadmaps..."
             className="w-full rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm outline-none focus:border-indigo-500 dark:border-slate-700 dark:bg-slate-950 dark:text-white sm:w-64"
           />
-          <select className="rounded-xl border border-slate-300 bg-white px-3 py-2.5 text-sm outline-none dark:border-slate-700 dark:bg-slate-950 dark:text-white">
+          <select className="w-full rounded-xl border border-slate-300 bg-white px-3 py-2.5 text-sm outline-none dark:border-slate-700 dark:bg-slate-950 dark:text-white sm:w-auto">
             <option>All</option>
             <option>Active</option>
             <option>Completed</option>
@@ -59,7 +59,7 @@ function MyRoadmaps() {
       {loading ? (
         <div>Loading...</div>
       ) : roadmaps.length === 0 ? (
-        <EmptyState title="No roadmaps yet" description="Generate your first roadmap to start tracking your learning." action="Create roadmap" />
+        <EmptyState title="No roadmaps yet" description="Generate your first roadmap to start tracking your learning." action="Create roadmap" actionPath="/create-roadmap" />
       ) : (
         <div className="grid gap-5 lg:grid-cols-2">
           {roadmaps.map((roadmap) => {

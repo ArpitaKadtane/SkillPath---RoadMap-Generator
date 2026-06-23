@@ -112,18 +112,18 @@ function RoadmapDetails() {
         <div className="space-y-2">
           <p className="text-sm font-semibold uppercase tracking-wide text-indigo-600">Roadmap Details</p>
           <div className="flex flex-wrap items-center gap-3">
-            <h1 className="text-3xl font-bold tracking-tight dark:text-white">{roadmap.title}</h1>
+            <h1 className="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl">{roadmap.title}</h1>
             <Badge tone={statusInfo.tone}>{statusInfo.label}</Badge>
           </div>
         </div>
-        <div className="flex shrink-0 gap-3">
+        <div className="flex flex-wrap gap-2 sm:shrink-0 sm:gap-3">
           <Link to="/roadmaps">
-            <Button variant="secondary">Back to My Roadmaps</Button>
+            <Button variant="secondary" className="text-xs sm:text-sm">Back</Button>
           </Link>
           <Button
             variant="secondary"
             onClick={() => setShowDeleteModal(true)}
-            className="text-red-600 hover:border-red-200 hover:bg-red-50 dark:hover:bg-red-950"
+            className="text-xs text-red-600 hover:border-red-200 hover:bg-red-50 dark:hover:bg-red-950 sm:text-sm"
           >
             Delete
           </Button>

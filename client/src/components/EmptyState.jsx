@@ -1,6 +1,17 @@
+import { Link } from 'react-router-dom';
 import Button from './Button.jsx';
 
-function EmptyState({ title, description, action }) {
+function EmptyState({ title, description, action, actionPath }) {
+  const btn = action ? (
+    actionPath ? (
+      <Link to={actionPath}>
+        <Button>{action}</Button>
+      </Link>
+    ) : (
+      <Button>{action}</Button>
+    )
+  ) : null;
+
   return (
     <div className="rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-8 text-center dark:border-slate-700 dark:bg-slate-900/60">
       <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-indigo-100 text-xl dark:bg-indigo-950">
@@ -10,7 +21,7 @@ function EmptyState({ title, description, action }) {
       <p className="mx-auto mt-2 max-w-md text-sm text-slate-600 dark:text-slate-400">
         {description}
       </p>
-      {action && <div className="mt-5"><Button>{action}</Button></div>}
+      {btn && <div className="mt-5">{btn}</div>}
     </div>
   );
 }

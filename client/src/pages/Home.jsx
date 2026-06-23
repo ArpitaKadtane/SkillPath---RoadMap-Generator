@@ -200,13 +200,13 @@ function Home() {
             <a href="#about" className="hover:text-indigo-600">About</a>
           </div>
 
-          <div className="flex items-center gap-3">
-            <ThemeToggle className="hidden sm:inline-flex" />
-            <Link to="/login" className="hidden text-sm font-semibold text-slate-700 hover:text-indigo-600 dark:text-slate-300 sm:block">
+          <div className="flex items-center gap-2 sm:gap-3">
+            <ThemeToggle />
+            <Link to="/login" className="text-sm font-semibold text-slate-700 hover:text-indigo-600 dark:text-slate-300">
               Login
             </Link>
             <Link to="/register">
-              <Button>Get Started</Button>
+              <Button className="px-3 sm:px-4">Get Started</Button>
             </Link>
           </div>
         </nav>
@@ -218,7 +218,7 @@ function Home() {
             transition={{ duration: 0.65, ease: 'easeOut' }}
           >
             <Badge>AI-powered roadmap generator</Badge>
-            <h1 className="mt-7 max-w-4xl text-5xl font-bold tracking-tight sm:text-6xl lg:text-7xl">
+            <h1 className="mt-7 max-w-4xl text-4xl font-bold tracking-tight sm:text-6xl lg:text-7xl">
               Turn Your Career Goal Into a Clear Learning Roadmap
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600 dark:text-slate-300">

@@ -69,7 +69,7 @@ function RoadmapPlan({ phases = [], roadmapType, compact = false }) {
                   <Sparkles className="h-3.5 w-3.5" />
                   {phase.phase || `Week ${phaseIndex + 1}`}
                 </div>
-                <h3 className="mt-3 text-xl font-bold tracking-tight text-slate-950 dark:text-white">
+                <h3 className="mt-3 text-lg font-bold tracking-tight text-slate-950 dark:text-white sm:text-xl">
                   {phase.focus || 'Focused learning sprint'}
                 </h3>
                 {phase.outcome && (
@@ -190,7 +190,7 @@ function RoadmapPlan({ phases = [], roadmapType, compact = false }) {
                 <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 dark:text-slate-400">
                   Curated Resources
                 </p>
-                <div className={`mt-2 grid gap-2 ${compact ? '' : 'sm:grid-cols-2'}`}>
+                <div className="mt-2 grid gap-2 sm:grid-cols-2">
                   {phase.resources.map((item, index) => {
                     const resource = formatResource(item);
                     const content = (

@@ -440,11 +440,11 @@ function ProfileSetup() {
               />
             </Card>
 
-            <div className="flex items-center justify-between rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
+            <div className="flex flex-col gap-3 rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900 sm:flex-row sm:items-center sm:justify-between">
               <p className="text-sm text-slate-600 dark:text-slate-400">
                 {savedProfile ? 'Profile saved!' : 'Your progress is saved when you click Save.'}
               </p>
-              <Button type="submit" isLoading={isSubmitting} disabled={isSubmitting}>
+              <Button type="submit" isLoading={isSubmitting} disabled={isSubmitting} className="w-full sm:w-auto">
                 {savedProfile ? 'Saved' : 'Save Profile'}
               </Button>
             </div>
